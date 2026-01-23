@@ -1,0 +1,8 @@
+# theme = "rose-pine"
+font-family = "Inconsolata Nerd Font Mono Bold"
+font-size = 13
+background-opacity = 0.95
+background-blur-radius = 0
+title = "he he "
+cursor-opacity = 0.90 
+adjust-cursor-thickness = 3
