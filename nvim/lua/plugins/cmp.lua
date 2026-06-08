@@ -3,6 +3,25 @@ return {
 		"L3MON4D3/LuaSnip",
 		dependencies = { "saadparwaiz1/cmp_luasnip", "rafamadriz/friendly-snippets" },
 	},
+    {
+        "github/copilot.vim",
+        config = function()
+            -- 1. Vô hiệu hóa phím Tab mặc định của Copilot
+            vim.g.copilot_no_tab_map = true
+            vim.g.copilot_assume_mapped = true
+            
+            -- 2. Map phím Option (Alt) + Enter để nhận gợi ý từ Copilot
+            -- Trên Mac, <M-CR> tương ứng với Option + Return
+            vim.keymap.set("i", "<M-CR>", 'copilot#Accept("\\<CR>")', {
+                expr = true,
+                replace_keycodes = false,
+            })
+            
+            -- (Tùy chọn) Map thêm phím để duyệt gợi ý tiếp theo của Copilot
+            vim.keymap.set("i", "<M-]>", "<Plug>(copilot-next)")
+            vim.keymap.set("i", "<M-[>", "<Plug>(copilot-previous)")
+        end,
+    },
 	{
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-buffer",
